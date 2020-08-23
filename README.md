@@ -1,4 +1,4 @@
-# template-repository
+# Module iOS Application
 
 ## Description
 
@@ -14,6 +14,14 @@ The existing repository is a template, I can generate new repositories with the 
 - [Helpful resources](#helpful-resources)
 
 ## Setup Steps
+
+**Important:** we cannot import another app in another app aka `Single View App` calling a `Single View App`.
+
+To create an application with many module, first we need to create a new folder, then start Xcode and create a workspace and add it in the new folder you just created. Once that has been created
+
+First create a class in the Single UI App and run it in the appDelegate, this is important as we will know it will work when we add this class as part of framework
+
+Then we will want to select a `Framework`
 
 ```
 Code here
@@ -55,5 +63,14 @@ How to manage releases in a repository [link](https://help.github.com/en/github/
 
 ## Helpful resources
 
-The following link provides helpful information
-- [link](https://github.com/JPrendy/template-repository).
+The following link provides helpful information video on how to setup a modules in Xcode
+- [link](https://www.youtube.com/watch?v=O_GDggfzaMY).
+
+The following link provides helpful information article on how to setup a modules in Xcode
+- [link](https://www.raywenderlich.com/5109-creating-a-framework-for-ios#toc-anchor-001).
+
+The following link provides helpful information on how to setup `structures` and `classes` in iOS
+- [link](https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html).
+
+The following link provides helpful information on how to fix `initializer is inaccessible due to 'internal' protection level`
+- [link](https://stackoverflow.com/a/40859332).
