@@ -2,7 +2,7 @@
 
 ## Description
 
-The existing repository is a template, I can generate new repositories with the same directory structure, branches, and files.
+A Swift Application that contains a Swift module/library that can be reused in many other projects.
 
 ## Contents
 
@@ -17,15 +17,36 @@ The existing repository is a template, I can generate new repositories with the 
 
 **Important:** we cannot import another app in another app aka `Single View App` calling a `Single View App`.
 
-To create an application with many module, first we need to create a new folder, then start Xcode and create a workspace and add it in the new folder you just created. Once that has been created
+To create an application with many module, first we need to create a new folder, then start Xcode and create a workspace by going `File > new > workspace` and call ir `module-test-application` and add it in the new folder you just created. 
 
-First create a class in the Single UI App and run it in the appDelegate, this is important as we will know it will work when we add this class as part of framework
+Next, we want to create a project in the workspace we just created by going `File > new > project` and select `Single View App` and call it `module-test-application`. 
 
-Then we will want to select a `Framework`
+Once that has been created, create a class in the `module-test-application`, for example this class is Pokemon.
 
+```swift
+import Foundation
+
+public class Pokemon {
+    
+    public init() {}
+    
+    public let region = "Johto"
+
+}
 ```
-Code here
+
+Add the following to `AppDelegate.swift`, this is important as we will know it will work when we add this class as part of framework
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Override point for customization after application launch.
+    let test = Pokemon().region
+    print("hello \(test)")
+    return true
+}
 ```
+
+To create a framework 
 
 ## How to run the project locally
 
@@ -74,3 +95,6 @@ The following link provides helpful information on how to setup `structures` and
 
 The following link provides helpful information on how to fix `initializer is inaccessible due to 'internal' protection level`
 - [link](https://stackoverflow.com/a/40859332).
+
+The following link provides helpful information on the differences between Framework, library, Package and Module
+- [link](https://dev.to/hamza/framework-vs-library-vs-package-vs-module-the-debate-3jpp).
