@@ -17,11 +17,13 @@ A Swift Application that contains a Swift module/library that can be reused in m
 
 **Important:** we cannot import another app in another app aka `Single View App` calling a `Single View App`.
 
-To create an application with many module, first we need to create a new folder, then start Xcode and create a workspace by going `File > new > workspace` and call ir `module-test-application` and add it in the new folder you just created. 
+To create an application with many module, first we need to create a new folder, then start Xcode and create a workspace by going `File > new > workspace` and call it   `module-application` and add it in the new folder you just created. 
 
-Next, we want to create a project in the workspace we just created by going `File > new > project` and select `Single View App` and call it `module-test-application`. 
+Next, we want to create a project in the workspace we just created by going `File > new > project` and select `Single View App` and call it `module-ios-application`. Make sure it is added to `module-application`. See the image below.
 
-Once that has been created, create a class in the `module-test-application`, for example this class is Pokemon.
+<p><img src="images/addTo.png" width="500"/></p>
+
+Once that has been created, create a class in the `module-ios-application`, for example this class is Pokemon.
 
 ```swift
 import Foundation
@@ -46,13 +48,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-To create a framework 
+To create a module/framework, we want to create a project in the workspace we just created by going `File > new > project` and select `framework` and call it `module-test-application`.  Make sure it is added to `module-application`. See the image below.
 
-## How to run the project locally
+<p><img src="images/addTo.png" width="500"/></p>
 
-```
-Code here
-```
+Now, carry over the data in Pokemon class to the framework project. After that has been added.
+
+We go back to the `Single View App`, add drag the framework file into the `module-ios-application`. See the image below
+
+<p><img src="images/addFrameworkToSingleViewApp.png" width="500"/></p>
 
 ## Tools
 
