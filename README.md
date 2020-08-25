@@ -58,6 +58,40 @@ We go back to the `Single View App`, add drag the framework file into the `modul
 
 <p><img src="images/addFrameworkToSingleViewApp.png" width="500"/></p>
 
+Go back to `AppDelegate.swift` and remember to import the project in the file with `import module_test_application`. You should have something like the following below.
+
+
+```swift
+import UIKit
+import module_test_application
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        let test = Pokemon().region
+        print("hello \(test)")
+        return true
+    }
+```
+
+To set up fastlane, type the following in the terminal and follow the steps
+
+```
+fastlane init
+```
+
+## How to run the project locally
+
+To run the tests locally, run the following.
+
+```
+bundle exec fastlane tests
+```
+
 ## Tools
 
 **Linter:** we use the following linter [link](https://github.com/github/super-linter).
